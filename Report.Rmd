@@ -11,7 +11,7 @@ icecream = read.table("icecream.csv",header=TRUE,sep=",")
 
  
  **Define & Design**
- 
+ Hello
  SIRINE
  
  When cooking ice cream batter, the viscosity is an important aspect that needs to be optimized. Eventhough the absolute viscosity value of an ice cream doesn't determine the quality of the icecream in a straight forward way, it has been shown that, when varying some of the icecream's parameters, viscosity can be a reference in terms of quality changes in the icecream. Moreover, a better understanding of the viscosity, and the icecream parameters it depends on, can help with the development of a standarized procedure for determining icecream viscocity [1].
