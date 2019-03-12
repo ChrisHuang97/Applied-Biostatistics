@@ -13,6 +13,8 @@ icecream = read.table("icecream.csv",header=TRUE,sep=",")
  
  **Define & Design**
  
+ SIRINE
+ 
  When cooking ice cream batter, the viscosity is an important aspect that needs to be optimized. Eventhough the absolute viscosity value of an ice cream doesn't determine the quality of the icecream in a straight forward way, it has been shown that, when varying some of the icecream's parameters, viscosity can be a reference in terms of quality changes in the icecream. Moreover, a better understanding of the viscosity, and the icecream parameters it depends on, can help with the development of a standarized procedure for determining icecream viscocity [1].
  In this work, we will try to find a relationship between the viscosity and the following parameters: moisture, protein percentage and ash content of the flour used to bake the ice cream. These variables were chosen since they can be easily controlled, allowing us to set specific conditions to obtain an incecream with a viscosity maintained in a range of interest.[2]
  
