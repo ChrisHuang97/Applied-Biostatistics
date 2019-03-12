@@ -3,7 +3,6 @@ output:
   html_document: default
 ---
 ```{r,echo=FALSE}
-setwd("~/Desktop/BSR1")
 icecream = read.table("icecream.csv",header=TRUE,sep=",")
 ```
 
