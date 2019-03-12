@@ -1,0 +1,73 @@
+---
+output:
+  html_document: default
+---
+```{r,echo=FALSE}
+setwd("~/Desktop/BSR1")
+icecream = read.table("icecream.csv",header=TRUE,sep=",")
+```
+
+
+###Predicting the Viscosity of an Ice Cream by Regression Analysis
+
+ 
+ **Define & Design**
+ 
+ When cooking ice cream batter, the viscosity is an important aspect that needs to be optimized. Eventhough the absolute viscosity value of an ice cream doesn't determine the quality of the icecream in a straight forward way, it has been shown that, when varying some of the icecream's parameters, viscosity can be a reference in terms of quality changes in the icecream. Moreover, a better understanding of the viscosity, and the icecream parameters it depends on, can help with the development of a standarized procedure for determining icecream viscocity [1].
+ In this work, we will try to find a relationship between the viscosity and the following parameters: moisture, protein percentage and ash content of the flour used to bake the ice cream. These variables were chosen since they can be easily controlled, allowing us to set specific conditions to obtain an incecream with a viscosity maintained in a range of interest.[2]
+ 
+ For the reasons mentioned aboves, we would like to build a model to predict the viscosity of an ice cream. We are able to do so thanks to regression analysis, where we set the viscosity of the icecream as our dependant variable, that is, the variable we want to predict, which is expressed in terms of degree MacMichale. Thus, we are working with continuous quantitative variables, more specifically: ratios. 
+ Based on everyday experiences, we can make the following hypothesis: we expect moisture to be negatively associated to the viscosity (melts more easily) whereas we expect both the protein percetenge and the ash content of the flour to be positively associated to the viscosity (makes it thicker). However, viscosity is not a state of matter but rather a behaviour so our predictor variables might act in another way on our response variable. 
+  To perform our regression analysis, we will work with the data collected by Dr. Huang and his team for 39 icecreams [2].
+ 
+ **Prepare & Explore**
+ 
+  As a first step of our data exploration, we will look at the distribution of our predictors. Indeed, this need to be done before analysing the distributions of the viscosity with respect to our predictors as the distribution of the viscosity, given our independant variables, should be closely linked to the distribution of these predictors.
+ 
+ 
+ 
+ 
+ The first step of our data exploration is to look at the scatterplots between viscosity and each parameters seperatly in order to determine wheter or not there is a relationship between our dependant variable and the independant variables.
+ 
+```{r,echo=FALSE} 
+
+par(mfrow=c(1,3))
+
+plot(icecream$moisture,icecream$viscosity, main = "Regression for 
+     Moisture on Viscosity", xlab="Moisture [%]",ylab="Viscosity[°MacMichale]") 
+#abline(lm(viscosity~moisture, data=icecream),col="red")
+
+plot(icecream$protein,icecream$viscosity, main = "Regression for 
+     Protein on Viscosity", xlab="Protein [%]",ylab="Viscosity[°MacMichale]") 
+#abline(lm(viscosity~protein, data=icecream),col="red")
+
+plot(icecream$ash,icecream$viscosity, main = "Regression for 
+     Ash content in the flour on Viscosity", xlab="Ash in flour [%]",ylab="Viscosity[°MacMichale]") 
+#abline(lm(viscosity~ash, data=icecream),col="red")
+```
+
+The scatterplots evaluating the relationship between the viscosity and the protein percentage, first, the ash component of the flour, second, both display two different groups with linear relationship in each. As for the relationship of the viscosity with the moisture, the single line shows a positive trend but with a low R^2.
+
+To further our investigation of these relationships, we calculated the correlation of viscosity with the moisture: `r cor(icecream$viscosity, icecream$moisture, method = c("pearson", "kendall", "spearman"))`, the protein percentage: `r cor(icecream$viscosity, icecream$protein, method = c("pearson", "kendall", "spearman"))` and the ash content of the flour: `r cor(icecream$viscosity, icecream$ash, method = c("pearson", "kendall", "spearman"))`
+
+blabla relevant values of our data:
+```{r,echo=FALSE}
+summary(icecream)
+```
+
+blabla mean of the viscosity: `r mean(icecream$viscosity)`
+
+
+**Refine the Model**
+
+lalalalalala 
+ 
+ **CONCLUSION**
+ 
+lalallaallalaalal
+
+**REFERENCES**
+
+[1]  Leighton A., Levinton A., Williams O. E. (1934). "The Apparent Viscosity of Ice Cream"
+[2] V.T. Huang, J.B. Lindamood, P.M.T. Hansen (1988). "Ice-Cream Cone
+Baking: Dependence of Baking Performance on Flour and Batter Viscosity,"
