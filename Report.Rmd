@@ -25,12 +25,7 @@ icecream = read.table("icecream.csv",header=TRUE,sep=",")
  **Prepare & Explore**
  
   As a first step of our data exploration, we will look at the distribution of our predictors. Indeed, this need to be done before analysing the distributions of the viscosity with respect to our predictors as the distribution of the viscosity, given our independant variables, should be closely linked to the distribution of these predictors.
- 
- 
- 
- 
- The first step of our data exploration is to look at the scatterplots between viscosity and each parameters seperatly in order to determine wheter or not there is a relationship between our dependant variable and the independant variables.
- 
+
 ```{r,echo=FALSE} 
 
 par(mfrow=c(1,3))
@@ -52,21 +47,12 @@ The scatterplots evaluating the relationship between the viscosity and the prote
 
 To further our investigation of these relationships, we calculated the correlation of viscosity with the moisture: `r cor(icecream$viscosity, icecream$moisture, method = c("pearson", "kendall", "spearman"))`, the protein percentage: `r cor(icecream$viscosity, icecream$protein, method = c("pearson", "kendall", "spearman"))` and the ash content of the flour: `r cor(icecream$viscosity, icecream$ash, method = c("pearson", "kendall", "spearman"))`
 
-blabla relevant values of our data:
-```{r,echo=FALSE}
-summary(icecream)
-```
-
-blabla mean of the viscosity: `r mean(icecream$viscosity)`
-
-
 **Refine the Model**
 
-lalalalalala 
  
  **CONCLUSION**
  
-lalallaallalaalal
+
 
 **REFERENCES**
 
